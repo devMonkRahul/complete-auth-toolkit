@@ -1,0 +1,35 @@
+# Test files
+tests/
+*.test.js
+
+# Configuration files
+jest.config.js
+*.config.js
+
+# Local dev tools
+build.js
+example/
+demo/
+scripts/
+
+# Node modules
+node_modules/
+package-lock.json
+
+# Dotfiles
+.gitignore
+.env
+
+# Version control
+.git/
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docs (if not needed in npm)
+LICENSE

@@ -1,4 +1,4 @@
-import * as auth from '../index.js';
+import * as auth from '../src/index.js';
 
 describe('Authentication Toolkit Tests', () => {
     it('should generate a valid access token', () => {

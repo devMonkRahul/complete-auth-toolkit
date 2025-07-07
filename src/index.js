@@ -1,6 +1,6 @@
 import crypto from 'crypto';
-import * as jwt from "./src/jwt.js";
-import * as password from "./src/password.js";
+import * as jwt from "./jwt.js";
+import * as password from "./password.js";
 
 export const generateAccessToken = jwt.generateAccessToken;
 export const verifyAccessToken = jwt.verifyAccessToken;
