@@ -1,0 +1,43 @@
+{
+  "name": "complete-auth-toolkit",
+  "version": "1.0.0",
+  "description": "A comprehensive authentication toolkit with JWT, bcrypt and more.",
+  "keywords": [
+    "authentication",
+    "JWT",
+    "bcrypt",
+    "express",
+    "middleware",
+    "security"
+  ],
+  "homepage": "https://github.com/devMonkRahul/complete-auth-toolkit#readme",
+  "bugs": {
+    "url": "https://github.com/devMonkRahul/complete-auth-toolkit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devMonkRahul/complete-auth-toolkit.git"
+  },
+  "license": "MIT",
+  "author": "Rahul",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "crypto": "^1.0.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.28.0",
+    "jest": "^30.0.4"
+  }
+}
