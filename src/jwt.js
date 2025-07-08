@@ -52,7 +52,7 @@ export const verifyRefreshToken = (token, secret) => {
     }
 }
 
-export const refreshAccessToken = (refreshToken, secret, newPayload) => {
+export const refreshAccessToken = (refreshToken, secret, newPayload, options = {}) => {
     try {
         const { success, payload, error } = verifyRefreshToken(refreshToken, secret);
         if (!success) {
@@ -62,8 +62,17 @@ export const refreshAccessToken = (refreshToken, secret, newPayload) => {
                 error: error,
             };
         }
-    
-        const newToken = generateAccessToken(newPayload, secret);
+
+        // Remove JWT-specific properties from the payload to avoid conflicts
+        const { exp, iat, iss, ...cleanPayload } = payload;
+
+        const defaultOptions = {
+            expiresIn: '15m', // Default expiration time for access tokens
+            algorithm: 'HS256', // Default algorithm
+            issuer: 'complete-auth-toolkit', // Default issuer
+        }
+
+        const newToken = generateAccessToken({ ...cleanPayload, ...newPayload }, secret, { ...defaultOptions, ...options });
         return {
             success: true,
             token: newToken,

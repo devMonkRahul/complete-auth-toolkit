@@ -21,7 +21,7 @@
   "license": "MIT",
   "author": "Rahul",
   "type": "module",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "jest"
   },
