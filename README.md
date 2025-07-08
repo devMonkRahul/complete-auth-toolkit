@@ -47,7 +47,36 @@ const isValid = await verifyPassword("myPassword123", hash);
 const randomPassword = generateRandomPassword(16);
 
 // Example: Validate password strength
-const { valid, errors } = validatePasswordStrength("weakpass");
+const strongPassword = 'StrongP@ssw0rd!';
+const weakPassword = 'weak';
+const strongResult = validatePasswordStrength(strongPassword);
+const weakResult = validatePasswordStrength(weakPassword);
+// strongResult: {
+//   isValid: true,
+//   score: 5,
+//   strength: 'strong',
+//   requirements: {
+//     minLength: 8,
+//     hasUppercase: true,
+//     hasLowercase: true,
+//     hasNumber: true,
+//     hasSpecialChar: true,
+//     isNotCommon: true
+//   }
+// }
+// weakResult: {
+//   isValid: false,
+//   score: 2,
+//   strength: 'weak',
+//   requirements: {
+//     minLength: 8,
+//     hasUppercase: false,
+//     hasLowercase: true,
+//     hasNumber: false,
+//     hasSpecialChar: false,
+//     isNotCommon: true
+//   }
+// }
 
 // Example: Generate a secure token
 const secureToken = generateSecureToken(32);
@@ -85,7 +114,17 @@ const otp = generateOtp(6);
 - **generateRandomPassword(length)**
   - Generates a random password of specified length.
 - **validatePasswordStrength(password)**
-  - Checks password strength, returns `{ valid, errors }`.
+  - Checks password strength, returns an object:
+  - `isValid` (boolean): Whether the password is strong
+  - `score` (number): Password strength score (0-5)
+  - `strength` ("weak" | "strong"): Strength label
+  - `requirements` (object):
+    - `minLength` (boolean)
+    - `hasUppercase` (boolean)
+    - `hasLowercase` (boolean)
+    - `hasNumber` (boolean)
+    - `hasSpecialChar` (boolean)
+    - `isNotCommon` (boolean)
 
 ### Utils
 

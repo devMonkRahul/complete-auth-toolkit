@@ -47,8 +47,26 @@ describe('Password Utility Tests', () => {
        const weakResult = auth.validatePasswordStrength(weakPassword);
 
        expect(strongResult.isValid).toBe(true);
+       expect(strongResult.score).toBeGreaterThan(4);
        expect(strongResult.strength).toBe('strong');
+       expect(strongResult.requirements).toEqual({
+           minLength: 8,
+           hasUppercase: true,
+           hasLowercase: true,
+           hasNumber: true,
+           hasSpecialChar: true,
+           isNotCommon: true
+       });
        expect(weakResult.isValid).toBe(false);
+       expect(weakResult.score).toBeLessThanOrEqual(3);
        expect(weakResult.strength).toBe('weak');
+       expect(weakResult.requirements).toEqual({
+           minLength: 8,
+           hasUppercase: false,
+           hasLowercase: true,
+           hasNumber: false,
+           hasSpecialChar: false,
+           isNotCommon: true
+       });
     });
 });
