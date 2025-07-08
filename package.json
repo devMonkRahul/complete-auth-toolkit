@@ -33,7 +33,6 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "crypto": "^1.0.1",
-    "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
