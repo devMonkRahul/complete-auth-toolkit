@@ -34,3 +34,5 @@ Thumbs.db
 
 # Docs (if not needed in npm)
 LICENSE
+
+*.config.json
