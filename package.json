@@ -1,6 +1,6 @@
 {
   "name": "complete-auth-toolkit",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A comprehensive authentication toolkit with JWT, bcrypt and more.",
   "keywords": [
     "authentication",
