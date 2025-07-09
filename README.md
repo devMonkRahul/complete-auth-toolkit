@@ -37,11 +37,21 @@ import {
 
 // Example: Generate and verify a JWT
 const token = generateAccessToken({ userId: 123 }, "your-secret", { expiresIn: "1h" });
-const payload = verifyAccessToken(token, "your-secret");
+const data = verifyAccessToken(token, "your-secret");
+// data : {
+//   success : true,
+//   payload : { userId : 123 },
+//   error: null
+// }
 
 // Example: Hash and verify a password
 const hash = await hashPassword("myPassword123");
-const isValid = await verifyPassword("myPassword123", hash);
+const result = await verifyPassword("myPassword123", hash);
+// result : {
+//   success: true,
+//   isValid: true,
+//   error: null
+// }
 
 // Example: Generate a secure random password
 const randomPassword = generateRandomPassword(16);
